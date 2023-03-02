@@ -10,7 +10,7 @@ const userList = document.getElementById('list')
 form.addEventListener('submit',onSubmit)
 
 window.addEventListener("DOMContentLoaded",()=>{
-    axios.get('https://crudcrud.com/api/db9f274b80e248e4814396a9664fc3fc/tracker')
+    axios.get('https://crudcrud.com/api/77b726fd978a45aea5d92fc8de68bc58/tracker')
     .then(res=>{
        for(let i=0;i<res.data.length;i++){
         updateDom((res.data)[i])
@@ -33,7 +33,7 @@ async function onSubmit(e){
                 amount:amount.value
             }
 
-          const vi = await axios.post('https://crudcrud.com/api/db9f274b80e248e4814396a9664fc3fc/tracker',userDetails)
+          const vi = await axios.post('https://crudcrud.com/api/77b726fd978a45aea5d92fc8de68bc58/tracker',userDetails)
             
                 console.log(vi,'details saved success')
                 updateDom(userDetails)
@@ -81,7 +81,7 @@ function updateDom(user){
 
 async function deleteUser(id){
     try {
-        await axios.delete(`https://crudcrud.com/api/db9f274b80e248e4814396a9664fc3fc/tracker/${id}`)
+        await axios.delete(`https://crudcrud.com/api/77b726fd978a45aea5d92fc8de68bc58/tracker/${id}`)
         console.log('data Succesfully deleted')
          removeUserFromScreen(id)
          total()
@@ -101,7 +101,7 @@ async function total(){
         var totalExpense=0;
         var positive =0
         var negative=0
-    var res = await axios.get('https://crudcrud.com/api/db9f274b80e248e4814396a9664fc3fc/tracker')
+    var res = await axios.get('https://crudcrud.com/api/77b726fd978a45aea5d92fc8de68bc58/tracker')
     
         res.data.forEach(i => {
             //console.log(i)
