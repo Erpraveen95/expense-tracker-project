@@ -90,9 +90,7 @@ async function deleteUser(id){
     }  
 }
 function removeUserFromScreen(id){
-    console.log(id)
     const item = document.getElementById(id); // get parent <li> elemen
-    console.log("this is item",item,"this is parentnode",item.parentNode)
     item.parentNode.removeChild(item);
   }
 
